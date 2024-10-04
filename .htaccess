@@ -1,0 +1,16 @@
+# Helicon ISAPI_Rewrite configuration file
+# Version 3.1.0.104
+
+RewriteEngine on 
+RewriteCond %{HTTP_HOST} ^cursit.com$ [NC]
+RewriteRule ^(.*)$ http://www.cursit.com/$1 [R=301,L] 
+#CURSIT
+RewriteRule ^crm-cursos-idiomas-cursit$  web-cursit/que_es_cursit.asp?r=..&id=2 [NC,L]
+RewriteRule ^crm-cursos-idiomas-funcionamiento$  web-cursit/funcionamiento_cursit.asp?r=..&id=3 [NC,L]
+RewriteRule ^crm-demo$  web-cursit/crm-demo.asp?r=..&id=6 [NC,L]
+RewriteRule ^crm-faqs$  web-cursit/crm_faqs.asp?r=..&id=4 [NC,L]
+RewriteRule ^crm-contacto$  web-cursit/crm_contacto.asp?r=..&id=8 [NC,L]
+RewriteRule ^contacto-envio$  mail/mail.asp?r=..&id=8&id2=1 [NC,L]
+RewriteRule ^crm-contacto-respuesta$  web-cursit/crm_contacto_2.asp?r=..&id=5 [NC,L]
+RewriteRule ^crm-privacidad$  web-cursit/crm_privacidad.asp?r=..&id=7 [NC,L]
+#FIN CURSIT

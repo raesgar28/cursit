@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /gestor/
+Disallow: /data/
+Disallow: /conex/
+Disallow: /web/
+Disallow: /up_docs/
+Disallow: /cursos-idiomas-extranjero/
+Sitemap: http://www.cursit.com/sitemap.xml

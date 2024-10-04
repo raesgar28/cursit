@@ -1,0 +1,12 @@
+irlanda 19
+reino-unido 21
+canada 22
+eeuu 23
+francia 24
+alemania 25
+nueva-zelanda 27
+malta 28
+australia 29
+italia 30
+espana 31
+suiza 32

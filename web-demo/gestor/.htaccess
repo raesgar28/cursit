@@ -1,0 +1,4 @@
+RewriteEngine on 
+RewriteRule ^/?(.*)\.jpk2$ $1.asp
+RewriteRule ^dash/$  dash/index.asp?r=../&rd=../../&n=dash [NC,L]
+RewriteRule ^gestor-pass/$  recordar-pass.asp?r=../&rd=../../&n=dash [NC,L]

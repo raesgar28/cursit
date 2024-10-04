@@ -1,0 +1,178 @@
+.wizard{margin:20px auto;background:#fff}
+.wizard .nav-tabs{position:relative;margin:0px auto;margin-bottom:0;border-bottom-color:#32C5D2}
+.wizard > div.wizard-inner{position:relative}
+.connecting-line{height:2px;background:#e0e0e0;position:absolute;width:80%;margin:0 auto;left:0;right:0;top:50%;z-index:1}
+.wizard .nav-tabs > li.active > a,.wizard .nav-tabs > li.active > a:hover,.wizard .nav-tabs > li.active > a:focus{color:#555;cursor:default;border:0;border-bottom-color:transparent}
+span.round-tab{width:70px;height:70px;line-height:70px;display:inline-block;border-radius:100px;background:#fff;border:2px solid #e0e0e0;z-index:2;position:absolute;left:0;text-align:center;font-size:25px}
+span.round-tab i{color:#e0e0e0}
+.wizard li.active span.round-tab{background:#fff;border:2px solid #5bc0de}
+.wizard li.active span.round-tab i{color:#5bc0de}
+span.round-tab:hover{color:#333;border:2px solid #5bc0de}
+.wizard .nav-tabs > li{width:25%}
+.wizard li:after{content:" ";position:absolute;left:46%;opacity:0;margin:0 auto;bottom:0;border:5px solid transparent;border-bottom-color:#5bc0de;transition:.1s ease-in-out}
+.wizard li.active:after{content:" ";position:absolute;left:46%;opacity:1;margin:0 auto;bottom:0;border:10px solid transparent;border-bottom-color:#5bc0de}
+.wizard .nav-tabs > li a{width:70px;height:70px;margin:20px auto;border-radius:100%;padding:0}
+.wizard .nav-tabs > li a:hover{background:transparent}
+.wizard .tab-pane{position:relative;padding-top:0px}
+.wizard h3{margin-top:0}
+.step_21{border:1px solid #eee;border-radius:5px;padding:10px}
+.step33{border:1px solid #ccc;border-radius:5px;padding-left:10px;margin-bottom:10px}
+.mar_ned{margin-bottom:10px}
+.wdth{width:25%}
+@media( max-width : 585px ) {
+.wizard{width:90%;height:auto!important}
+span.round-tab{font-size:16px;width:50px;height:50px;line-height:50px}
+.wizard .nav-tabs > li a{width:50px;height:50px;line-height:50px}
+.wizard li.active:after{content:" ";position:absolute;left:35%}
+}
+.reserva_check{margin-top:30px;margin-bottom:80px}
+.reserva_check h3{font-size:1.3em;color:#32C5D2}
+.reserva_check h4{color:#32C5D2;margin-top:0px;border-bottom:1px dashed #ddd;padding-bottom:25px;margin-bottom:15px;font-size:1.2em}
+.reserva_check .check_txt{font-size:0.9em;color:#000}
+.reserva_check .suma_total_total{font-size:1.7em;text-align:right;border-bottom:1px dashed #ddd;padding-bottom:15px;width:99%;margin-left:1%}
+.reserva_check .suma_total_total .fa{color:#32C5D2}
+.reserva_check a h5 {color:#32C5D2;font-size:1em;text-align:left;margin-bottom:25px}
+.reserva_check a:hover h5 {color:#333;font-size:1em;text-align:left;margin-bottom:25px}
+.reserva_check .user_reg a:hover h5 {color:#333;font-size:1em;text-align:right;margin-bottom:25px}
+.acceso{text-align:center;margin-bottom:35px;margin-top:35px;}
+.acceso_in{width:100%;max-width:350px;margin:0 auto;}
+.acceso_in_in{width:100%;max-width:350px;margin:0 auto;border:1px solid #ccc;padding:25px;margin-bottom:25px;text-align:left}
+.form-group .fa{position:absolute;text-indent:12px;margin-top:12px;font-size:1.3em;color:#ddd;z-index:3}
+.form-group label .fa{position:relative;text-indent:0px;margin-top:0px;font-size:1.3em;color:#ddd;z-index:3}
+.inp {text-indent:30px;}
+#usuario_new{margin-bottom:35px}
+.panel{box-shadow:none;border-color:#ddd;}
+#provincia{width:36%;}
+#pais{width:60%}
+.al-100{width:20%;}
+#sexo select {width:100%;margin-right:0px;margin-left:0px}
+#sexo .dd .ddTitle{padding-left:27px}
+#prov select {width:100%;margin-left:0px}
+#prov .dd .ddTitle{padding-left:27px}
+#pais_sel{margin-left:2%}
+#pais_sel select {width:100%;margin-right:0px;}
+.select-provincia {margin-right:10px}
+#datos_usuario{margin-bottom:35px;padding:0}
+#datos_alumno{margin-bottom:35px;padding:0}
+.f_nacimiento_txt{margin:0px;padding:0px;margin-bottom:11px;padding-top:9px;margin-right:10px}
+.f_nacimiento_txt .fa:first-child{margin-right:12px;color:#ddd}
+.f_nacimiento{width:100%;}
+.div_f_nacimiento{margin:0px;padding:0px;margin-bottom:11px;margin-right:15px}
+.div_f_nacimiento:last-child{margin-right:0px}
+.tooltip > .tooltip-inner {background-color:#32C5D2;color: #FFFFFF;border: 1px solid #32C5D2;padding: 9px;font-size: 1.2em;}
+.tooltip.top > .tooltip-arrow {border-top: 5px solid #32C5D2;}
+.nuevo_user{}
+.nuevo_user a{display:block;text-align:center;width:100%;background:#fff;padding-left:40px}
+.nuevo_user .fa{font-size:3em;margin-right:10px;padding-top:30px;padding-bottom:30px;}
+.acceso_in .nuevo_user a:hover{background:#fafafa;color:#fff}
+a.a_recuperar{color:#32C5D2;width:100%;display:inline-block;text-align:right}
+a.a_recuperar:hover{color:#333;}
+.btn_acceso{width:auto;display:inline-block;height:10px}
+.btn_recuperar{width:auto;display:inline-block;;float:right;margin-top:10px}
+.reg_pasado{}
+.inscribir_nuevo{margin-bottom:35px}
+.form-control:focus{border-color:#ccc}
+.agrees{color:#666;font-style:italic;font-size:0.8em}
+.subidor .inputfile{width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}
+.subidor .inputfile + label{max-width:100%;min-width:100%;font-size:1em;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;display:inline-block;overflow:hidden;padding:.625rem 1.25rem}
+.no-js .inputfile + label{display:none}
+.inputfile:focus + label,.inputfile.has-focus + label{outline:1px dotted #000;outline:-webkit-focus-ring-color auto 5px;max-width:100%;min-width:100%;}
+.inputfile + label svg{width:1em;height:1em;vertical-align:middle;fill:currentColor;margin-top:-.25em;margin-right:.25em}
+.inputfile-1 + label{background-color:#fff;color:#32C5D2;border:1px solid #32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s}
+.inputfile-1:focus + label,.inputfile-1.has-focus + label,.inputfile-1 + label:hover{color:#fff;background-color:#32C5D2;border:1px solid #32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s}
+.table tr:hover{background:#fafafa}
+.table a{display:block;color:#32C5D2}
+.table a:hover{display:block;color:#999;background:#ddd}
+.spinner_usu {position: fixed; top: 25%; left: 50%;margin-left: -125px;margin-top: -50px;text-align:center;z-index:1234;overflow: hidden;width: 350px;height: 220px;background:#fff;padding-top:25px;color:#32C5D2;font-weight:bold;-webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.75);-moz-box-shadow:0px 0px 8px 0px rgba(50, 50, 50, 0.75);box-shadow:0px 0px 8px 0px rgba(50, 50, 50,0.75);}
+#spinner_back_usu{position: fixed; background:rgba(0,0,0,0.5);position: fixed; top: 0; left: 0;width:100%;height:100%;overflow: hidden;text-align:center;z-index:111111111;}
+.ocult{visibility:hidden;height:1px;overflow:hidden}
+.user_in_ok{width:100%;max-width:450px;margin:0 auto;height:1450px;min-height:150px;height:auto!important;text-align:center;margin-bottom:35px;}
+.user_in_ok .fa{color:#32C5D2;font-size:3em;}
+.user_in_ok .fa:nth-child(3){font-size:2em}
+.user_in_ok span{display:block;min-height:25px;}
+.user_in_ok span:nth-child(2){margin-bottom:15px;}
+.metodosPagos{text-align:center;}
+.metodoPago{display:inline-block;margin-right:10%;width:100%;max-width:120px;cursor:pointer;vertical-align:top;margin-bottom:40px;}
+.metodoPago:last-child{margin-right:0%;}
+.metodoPago .fa{display:block;color:#32C5D2;font-size:3em;margin-bottom:15px;cursor:pointer}
+.metodoPago input{visibility:hidden;}
+.metodoPago_in{display:inline-block;margin-right:10%;width:100%;max-width:100px;cursor:pointer;vertical-align:top;margin-bottom:40px;}
+.metodoPago_in:last-child{margin-right:0%;}
+.metodoPago_in .fa{display:block;color:#32C5D2;font-size:2em;margin-bottom:15px;cursor:pointer}
+.metodoPago_in input{visibility:hidden;}
+.pr_reserva{margin:0 auto;margin-top:45px;margin-bottom:60px;border:1px dashed #32C5D2;padding:25px;width:100%;max-width:350px;}
+.pr_reserva_txt{display:block;}
+.pr_reserva_pr{font-size:2em;}
+.metodoPago input[type = "radio"] + label{width:100%;max-width:160px;border:1px solid #fff;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;padding-top:10px;padding-bottom:10px;cursor:pointer;min-height:140px}
+.metodoPago input[type = "radio"]:hover + label{width:100%;max-width:160px;border:1px solid #32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;background:#fafafa;color:#32C5D2;cursor:pointer}
+.metodoPago input[type = "radio"]:checked + label{width:100%;max-width:160px;border:1px solid #32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;background:#fafafa;color:#32C5D2;cursor:pointer}
+.metodoPago_in input[type = "radio"] + label{width:100%;max-width:160px;border:1px solid #fff;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;padding-top:10px;padding-bottom:10px;cursor:pointer;min-height:125px}
+.metodoPago_in input[type = "radio"]:hover + label{width:100%;max-width:160px;border:1px solid #32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;background:#fafafa;color:#32C5D2;cursor:pointer}
+.metodoPago_in input[type = "radio"]:checked + label{width:100%;max-width:160px;border:1px solid #32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;background:#fafafa;color:#32C5D2;cursor:pointer}
+.no_hay_pago{color:#F00;margin-top:80px;margin-bottom:120px}
+.no_hay_pago .fa{display:block;font-size:3em;color:#32C5D2;}
+.condiciones_contratacion_tit{margin-bottom:15px;color:#32C5D2;display:block;margin-top:25px;border-bottom:1px dashed #32C5D2;padding-bottom:10px;}
+.clausula_aceptacion{width:100%;margin:0 auto;border-left:1px dashed #32C5D2; overflow-y:scroll;height:100px;max-height:1000px;padding:15px;margin-bottom:25px;color:#999;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;}
+.clausula_aceptacion:hover{height:250px;max-height:250px;-webkit-transition-duration:.5s;-moz-transition-duration:.5s;transition-duration:.5s;}
+.clausula_aceptacion:hover{color:#000;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;}
+.check_a{color:#32C5D2;}
+.check_a:hover{color:#333;}
+.condiciones .c-checkbox{margin-bottom:15px}
+.condiciones .c-checkbox .fa{margin-right:7px}
+.final_reserva{margin-top:40px}
+.desadjuntar{visibility:hidden}
+.desadjuntar_nif{position:absolute;font-size:0.8em;margin-top:0px;right:42px;}
+.desadjuntar_nif:hover .fa{color:#32C5D2}
+.desadjuntar_pas{position:absolute;font-size:0.8em;margin-top:0px;right:50px;}
+.desadjuntar_pas:hover .fa{color:#32C5D2}
+#alumno_new_ok{padding-top:15px;width:100%;float:left;text-align:center}
+.error_acceso_span{display:block;float:left;width:100%;margin-top:25px;}
+.error_acceso{color:#F00;display:block;}
+.alu_metodos_pago{font-size:1.2em;color:#32C5D2;margin-top:20px;border-bottom:2px solid #ddd;padding-bottom:20px;}
+.alu_metodos_pago .fa{margin-right:5px;margin-left:5px;color:#999}
+.agente{border:1px solid #ddd;padding:10px}
+.historico{width:100%;text-align:center;color:#32C5D2;border-bottom:1px dashed #32C5D2;padding-bottom:16px;margin-bottom:15px; }
+.preciete{float:right;}
+.pres_concepto .fa{color:#ddd}
+.preciete .fa{margin-left:10px;color:#ddd}
+.proceso_fin{width:100%;max-width:750px;margin:0 auto;text-align:center;border:1px solid #ddd;padding-bottom:35px;padding-top:25px}
+.datos_pago{width:100%;max-width:750px;margin:0 auto;text-align:center;margin-top:35px;}
+.datos_pago_pr{color:#000;font-weight:700}
+.datos_pago_dat{display:block;width:100%;margin-top:20px;margin-bottom:20px;font-weight:700;border-bottom:1px solid #32C5D2;border-top:1px solid #32C5D2;padding-top:15px;padding-bottom:15px}
+.descarga_pdf_fin{margin-top:35px;margin-bottom:150px;width:100%;text-align:center}
+.proceso_fin .fa{display:block;font-size:6em;color:#32C5D2}
+.descarga_pdf_fin a{color:#32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;}
+.descarga_pdf_fin a:hover{color:#000;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;}
+.descarga_pdf_fin .fa{display:block;font-size:2.5em;}
+.met_pag_ver_reserva{display:block;margin-top:15px;}
+.met_pag_ver_reserva a{color:#32C5D2;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;}
+.met_pag_ver_reserva a:hover{color:#000;-webkit-transition-duration:.2s;-moz-transition-duration:.2s;transition-duration:.2s;}
+.met_pag_ver_reserva .fa{display:block;}
+.notas_fin{font-size:0.9em;text-align:left;display:block;border-bottom:1px solid #32C5D2;padding-bottom:15px}
+.nota_tpv{width:100%;margin-bottom:35px}
+.pagos_pasarela{margin-top:80px;margin-bottom:150px}
+#progress {overflow: hidden;height: 40px;margin-bottom: 20px;background-color: #f5f5f5;border-radius: 4px;-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);margin-bottom:55px}
+#progress .progress-bar {float: left;width: 0%;height: 100%;font-size: 12px;line-height: 20px;color: #ffffff;text-align: center;background-color: #337ab7;-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);-webkit-transition: width 0.6s ease;-o-transition: width 0.6s ease;transition: width 0.6s ease;
+display:inline-block;}
+.redirige_tpv{width:100%;margin-top:50px;text-align:center}
+.centra_panel{width:100%;max-width:650px;margin:0 auto;text-align:center;margin-top:150px}
+.reg_curso_completo{margin:0 auto;width:100%;max-width:355px;border:1px solid #ddd;padding:35px;color:#F00;margin-bottom:80px}
+.reg_curso_completo .fa{display:block;font-size:1.8em;}
+#no_autorizado{text-align:center;}
+.acordeon{width:100%;margin-bottom:40px;float:left;border:solid 1px #ddd;padding:15px}
+.reserva_check .acord_bot{color:#333;margin-top:0px;border-bottom:1px dashed #ddd;padding-bottom:25px;padding-top:7px;margin-bottom:15px;font-size:1.2em}
+.reserva_check .acord_bot .fa{margin-right:8px}
+.reserva_check .acord_bot2{color:#333;margin-top:0px;border-bottom:1px dashed #ddd;padding-bottom:25px;padding-top:7px;margin-bottom:15px;font-size:1.2em}
+.reserva_check .acord_bot2 .fa{margin-right:8px}
+.acordeon ul{padding:none;margin:none}
+.acordeon li{list-style-type:none;margin-bottom:8px;padding:none}
+.acordeon table{width:100%;}
+.acordeon td, th {padding:8px}
+.tab_tit{padding-left:12px;display:block;width:100%;text-align:right}
+.tab_tit2{padding-left:5px;display:block;width:100%;text-align:left;margin-bottom:15px}
+.res_tab_tit{font-weight:bold}
+.metodosPagos span{display:block;font-size:1.1em;margin-top:18px}
+
+#check_descuento{width:100%;height:180px;min-height:180px;max-width:350px;margin:0 auto;padding:25px;border:1px solid #ddd}
+#check_descuento .cod_txt{display:block;margin-bottom:10px;color:#000}
+.respuesta_cod{margin:0 auto;text-align:center;margin-top:25px;display:block;width:100%;min-height:55px;}

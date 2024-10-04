@@ -1,0 +1,1 @@
+var revealAnimate=function(){var a=function(){wow=new WOW({animateClass:"animated",offset:100,live:!0,mobile:!1})};return{init:function(){a()}}}();$(document).ready(function(){revealAnimate.init(),(new WOW).init(),setTimeout(function(){$(".wow").css("opacity","1")},100)});

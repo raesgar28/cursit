@@ -1,0 +1,266 @@
+# Helicon ISAPI_Rewrite configuration file
+# Version 3.1.0.104
+
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME}.asp -f 
+RewriteRule (.*) $1.asp
+
+
+RewriteCond %{HTTP_HOST} ^cursit.com$ [NC]
+RewriteRule ^(.*)$ http://www.cursit.com/$1 [R=301,L] 
+#RewriteCond %{HTTPS} !on
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+RewriteRule ^(crm/.+) $1 [NC,L]
+RewriteRule ^(control/.+) $1 [NC,L]
+RewriteRule ^(css/.+) $1 [NC,L]
+RewriteRule ^(js/.+) $1 [NC,L]	
+RewriteRule ^(images_upload/.+) $1 [NC,L]
+RewriteRule ^(img/.+) $1 [NC,L]
+RewriteRule ^(userfiles/.+) $1 [NC,L]
+RewriteRule ^(fuentes/.+) $1 [NC,L]
+RewriteRule ^(fav/.+) $1 [NC,L]
+RewriteRule ^(txt/.+) $1 [NC,L]
+RewriteRule ^(mapfiles/.+) $1 [NC,L]
+RewriteRule ^(data/.+) $1 [NC,L]
+RewriteRule ^(web/lib/.+) $1 [NC,L]
+RewriteRule ^(up_docs/.+) $1 [NC,L]
+RewriteRule ^(up_files/.+) $1 [NC,L]
+RewriteRule ^(blog/.+) $1 [NC,L]
+
+RewriteRule ^menu.asp$  web/comun/menu.asp [NC,L]
+
+RewriteRule ^gdpr$ web/gdpr.asp?r=&rd=../ [NC,L]
+RewriteRule ^gdpr/([^?/]+)$ web/gdpr.asp?r=../&rd=../&email_chimp=$1 [NC,L]
+RewriteRule ^gdpr-ok$ web/gdpr.asp?r=&rd=../ [NC,L]
+
+
+RewriteMap mapfile8 txt:mapfiles/cursos_jovenes.txt 
+RewriteMap mapfile1 txt:mapfiles/paises_jovenes.txt 
+RewriteMap lower int:tolower 
+RewriteRule ^cursos-idiomas-extranjero/jovenes/([^?/]+)/([^?/]+)$ cursos_idiomas_extranjero2.asp?nivelalumno=jovenes&id_pais=${mapfile1:${lower:$1}}&id=${mapfile8:${lower:$2}}&urll=../../../  [NC,L] 
+RewriteRule ^cursos-idiomas-extranjero/jovenes/([^?/]+)/([^?/]+)/tarifas$ tarifas_cursos2.asp?nivelalumno=jovenes&id_pais=${mapfile1:${lower:$1}}&id=${mapfile8:${lower:$2}}&urll=../../../../ [NC,L] 
+
+RewriteRule ^reserva$  web/reserva.asp?r=&rd=../ [NC,L]
+RewriteRule ^reserva-check$  web/reserva2.asp?r=&rd=../ [NC,L]
+RewriteRule ^reserva-tar$  web/lib/tpv/tar_enviar.php?r=&rd=../ [NC,L]
+RewriteRule ^reserva-tar-fn$  web/reserva2_pasarela.asp?r=&rd=../ [NC,L] 
+RewriteRule ^reserva-tar-fn-ant$  web/reserva2_pasarela_ant.asp?r=&rd=../ [NC,L]    
+RewriteRule ^reserva-tar-po$  web/reserva2_pasarela.asp?r=&rd=../ [NC,L]
+RewriteRule ^reserva-tar-pk$  web/reserva2_pasarela.asp?r=&rd=../ [NC,L]
+RewriteRule ^reserva-tar-pk-ant$  web/reserva2_pasarela_ant.asp?r=&rd=../ [NC,L]
+RewriteRule ^zona-privada$  web/z_privada.asp?r=&rd=../&z_nivel=dash [NC,L]
+RewriteRule ^login$  web/z_validar.asp?r=&rd=../&z_nivel=validar [NC,L]
+RewriteRule ^inscripciones$  web/z_inscripciones.asp?r=&rd=../&z_nivel=inscrip [NC,L]
+RewriteRule ^preinscripciones$  web/z_preinscripciones.asp?r=&rd=../&z_nivel=preinsc [NC,L]
+RewriteRule ^preinscripciones-ko$  web/z_preinscripciones.asp?r=&rd=../&msg=ko&z_nivel=preinsc [NC,L]
+RewriteRule ^inscribir$  web/z_inscribir.asp?r=&rd=../&z_nivel=inscribir [NC,L]
+RewriteRule ^modificar-datos$  web/z_mod_usuario.asp?r=&rd=../&z_nivel=mod_usu [NC,L]
+RewriteRule ^registro$  web/z_validar.asp?r=&rd=../&op=registro&z_nivel=validar [NC,L]
+RewriteRule ^modificar-datos-nom-ko$  web/z_mod_usuario.asp?r=&rd=../&ms=nomko&z_nivel=inscrip [NC,L]
+RewriteRule ^modificar-datos-mail-ko$  web/z_mod_usuario.asp?r=&rd=../&ms=mailko&z_nivel=inscrip [NC,L]
+RewriteRule ^modificar-datos-nif-ko$  web/z_mod_usuario.asp?r=&rd=../&ms=nifko&z_nivel=inscrip [NC,L]
+RewriteRule ^modificar-datos-ok$  web/z_mod_usuario.asp?r=&rd=../&ms=ok&z_nivel=inscrip [NC,L]
+RewriteRule ^modificar-datos-usu$  web/z_mod_usuario2.asp?r=&rd=../&z_nivel=mod_usu [NC,L]
+RewriteRule ^inscripciones-dett/([^?/]+)/([^?/]+)$  web/z_inscripciones_det.asp?r=../../&rd=../&id_programa=$1&id_alumno=$2&ms=ko&z_nivel=inscrip [NC,L]
+RewriteRule ^inscripciones-det$  web/z_inscripciones_det.asp?r=&rd=../&z_nivel=inscrip [NC,L]
+RewriteRule ^inscripciones-det-m/([^?/]+)/([^?/]+)$  web/z_inscripciones_det.asp?r=../../&rd=../&id_programa=$1&id_alumno=$2&ms=ok&z_nivel=inscrip [NC,L]
+RewriteRule ^inscripciones-det-e/([^?/]+)/([^?/]+)$  web/z_inscripciones_det.asp?r=../../&rd=../&id_programa=$1&id_alumno=$2&mse=ko&z_nivel=inscrip [NC,L]
+RewriteRule ^formalizar-reserva/([^?/]+)/([^?/]+)$  web/z_pr_metodos_pago.asp?r=../../&rd=../&id_programa=$1&id_alumno=$2&z_nivel=inscribir [NC,L]
+RewriteRule ^inscripciones-pagos$ web/reserva2.asp?r=&rd=../&z_nivel=inscribir [NC,L]
+RewriteRule ^salir$  web/z_salir.asp?r=&rd=../ [NC,L]
+RewriteRule ^recuperar-pass$ web/z_rec_pass.asp?r=&rd=../ [NC,L]
+RewriteRule ^recover/([^?/]+)$  web/z_rec_pass2.asp?r=../&rd=../&codigo_activacion=$1 [NC,L]
+RewriteRule ^recover2$  web/z_rec_pass2.asp?r=&rd=../ [NC,L]
+RewriteRule ^contacto-envio$  web/comun/mail.asp?r=&rd=../&pr=contacto [NC,L]
+RewriteRule ^formulario$  web/comun/mail_formulario.asp?r=&rd=../&pr=contacto [NC,L]
+RewriteRule ^respuesta$  web/respuesta.asp?r=&rd=../&pr=contacto [NC,L]
+RewriteRule ^formalizar-reserva-fin$  web/reserva2.asp?r=&rd=../ [NC,L]
+#MAPAS
+RewriteMap items txt:mapas_url/items.txt 
+RewriteMap categorias txt:mapas_url/categorias.txt 
+RewriteMap secciones txt:mapas_url/secciones.txt 
+RewriteMap subsecciones txt:mapas_url/subsecciones.txt 
+RewriteMap destinos txt:mapas_url/destinos.txt 
+RewriteMap generales txt:mapas_url/generales.txt 
+RewriteMap ciudades txt:mapas_url/ciudades.txt 
+RewriteMap noticias txt:mapas_url/noticias.txt
+RewriteMap lower int:tolower 
+RewriteRule ^inscribir/([^?/]+)/([^?/]+)$ web/z_inscribir.asp?r=../../&rd=../&id_item=${items:${lower:$2}}&z_nivel=inscribir [NC,L]
+
+#CURSOS
+RewriteCond ${items:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)$ web/programa.asp?id_item=${items:${lower:$1}}&r=&rd=../ [NC,L] 
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_item=${items:${lower:$2}}&r=../&rd=../ [NC,L] 
+
+RewriteRule ^([^?/]+)/cod-ko$ web/programa.asp?id_item=${items:${lower:$1}}&r=../&rd=../&cod_ko=si [NC,L] 
+
+RewriteRule ^([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_item=${items:${lower:$2}}&r=../../&rd=../&cod_ko=si [NC,L] 
+
+
+
+
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../../&rd=../&cod_ko=si [NC,L] 
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${subsecciones:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$4}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_subseccion=${subsecciones:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_subseccion=${subsecciones:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../../&rd=../&cod_ko=si [NC,L] 
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${subsecciones:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$4}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$5}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_subseccion=${subsecciones:${lower:$3}}&id_destino=${destinos:${lower:$4}}&id_item=${items:${lower:$5}}&r=../../../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_subseccion=${subsecciones:${lower:$3}}&id_destino=${destinos:${lower:$4}}&id_item=${items:${lower:$5}}&r=../../../../../&rd=../&cod_ko=si [NC,L] 
+#SOLO SECCIONES
+RewriteCond ${secciones:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_item=${items:${lower:$2}}&r=../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_item=${items:${lower:$2}}&r=../../&rd=../&cod_ko=si [NC,L] 
+#SOLO SUBSECCIONES
+RewriteCond ${subsecciones:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)$ web/programa.asp?id_subseccion=${subsecciones:${lower:$1}}&id_item=${items:${lower:$2}}&r=../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_subseccion=${subsecciones:${lower:$1}}&id_item=${items:${lower:$2}}&r=../../&rd=../&cod_ko=si [NC,L] 
+#SOLO DESTINOS
+RewriteCond ${destinos:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)$ web/programa.asp?id_destino=${destinos:${lower:$1}}&id_item=${items:${lower:$2}}&r=../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_destino=${destinos:${lower:$1}}&id_item=${items:${lower:$2}}&r=../../&rd=../&cod_ko=si [NC,L] 
+#SOLO SECCIONES - SUBSECCIONES
+RewriteCond ${secciones:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${subsecciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_subseccion=${subsecciones:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_subseccion=${subsecciones:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../../&rd=../&cod_ko=si [NC,L] 
+#SOLO SECCIONES - SUBSECCIONES - DESTINOS
+RewriteCond ${secciones:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${subsecciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$4}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_subseccion=${subsecciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_subseccion=${subsecciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../../&rd=../&cod_ko=si [NC,L] 
+#SOLO SECCIONES - DESTINOS
+RewriteCond ${secciones:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_seccion=${secciones:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../../&rd=../&cod_ko=si [NC,L] 
+#SOLO SUBSECCIONES - DESTINOS
+RewriteCond ${subsecciones:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_subseccion=${subsecciones:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_subseccion=${subsecciones:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../../&rd=../&cod_ko=si [NC,L] 
+
+#SOLO CATEGORIAS - DESTINOS
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_item=${items:${lower:$3}}&r=../../../&rd=../&cod_ko=si [NC,L] 
+#SOLO CATEGORIAS - SUBSECCIONES - DESTINOS
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${subsecciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$4}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_subseccion=${subsecciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../&rd=../ [NC,L] 
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_subseccion=${subsecciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../../&rd=../&cod_ko=si [NC,L] 
+#SOLO CATEGORIAS - SECCIONES - DESTINOS
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${items:${lower:$4}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../&rd=../ [NC,L]
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)/cod-ko$ web/programa.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&id_item=${items:${lower:$4}}&r=../../../../&rd=../&cod_ko=si [NC,L]
+
+
+#ELIGE DESTINO CIUDAD
+
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^lst/([^?/]+)/([^?/]+)/([^?/]+)$  web/listado.asp?r=../../../&rd=../&id_categoria=${categorias:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_ciudad=${ciudades:${lower:$3}}&pr=dst&lst=si [NC,L]
+
+
+
+
+#SOLO CATEGORIAS (SIN ITEMS)
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)$ web/listado.asp?id_categoria=${categorias:${lower:$1}}&r=&rd=../&pr=men [NC,L] 
+
+#SOLO SUBSECCION (SIN ITEMS)
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${subsecciones:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/subseccion.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_subseccion=${subsecciones:${lower:$3}}&r=../../&rd=../ [NC,L]
+#SOLO DESTINO DESDE SECCIONES (SIN ITEMS)
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${subsecciones:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$4}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)/([^?/]+)$ web/destino.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_subseccion=${subsecciones:${lower:$3}}&id_destino=${destinos:${lower:$4}}&r=../../&rd=../ [NC,L] 
+#SOLO DESTINO DESDE SECCIONES (SIN SUBSECCIONES)
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/listado.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&r=../../&rd=../&pr=men [NC,L] 
+
+
+#SOLO DESTINO DESDE ELIGE DESTINO ()
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)$ web/listado.asp?id_categoria=${categorias:${lower:$1}}&id_destino=${destinos:${lower:$2}}&r=../&rd=../&pr=dst [NC,L] 
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/listado.asp?id_categoria=${categorias:${lower:$1}}&id_destino=${destinos:${lower:$2}}&r=../../&rd=../&pr=dst&pag=$3 [NC,L] 
+
+
+#SOLO SECCION DESDE MAPA ()
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)$ web/listado.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&r=../&rd=../&pr=men [NC,L] 
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/listado.asp?id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&r=../../&rd=../&pr=men&pag=$3 [NC,L] 
+
+
+
+
+
+#SOLO DESTINO >> CIUDAD DESDE ELIGE DESTINO ()
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${ciudades:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)/([^?/]+)$ web/destino.asp?id_categoria=${categorias:${lower:$1}}&id_destino=${destinos:${lower:$2}}&id_ciudad=${ciudades:${lower:$3}}&r=../../&rd=../ [NC,L] 
+RewriteRule ^test-nivel-ingles$  web/test_nivel.asp?r=&rd=../&tipo_pg=tn [NC,L]
+RewriteRule ^test-nivel-env$  web/test_nivel2.asp?r=&rd=../&tipo_pg=tn [NC,L]
+RewriteRule ^respuesta-test$  web/respuesta.asp?r=&rd=../&pr=test&tipo_pg=tn [NC,L]
+RewriteRule ^politica-cookies$  web/general.asp?r=&rd=../&tipo_pg=ck [NC,L]
+RewriteCond ${generales:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)$ web/general.asp?id_general=${generales:${lower:$1}}&r=&rd=../ [NC,L] 
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^/]+)/([^?/]+)$ web/listado.asp?pag=$2&id_categoria=${categorias:${lower:$1}}&r=../&rd=../&pr=men [NC,L]
+RewriteCond ${categorias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${secciones:${lower:$2}|NOT_FOUND} !NOT_FOUND
+RewriteCond ${destinos:${lower:$3}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^/]+)/([^?/]+)/([^?/]+)/([^?/]+)$ web/listado.asp?pag=$4&id_categoria=${categorias:${lower:$1}}&id_seccion=${secciones:${lower:$2}}&id_destino=${destinos:${lower:$3}}&r=../../../&rd=../&pr=men [NC,L]
+RewriteRule ^busca$ web/listado.asp?r=&rd=../&pr=busca [NC,L]
+RewriteRule ^busca/([^?/]+)/([^?/]+)$ web/listado.asp?r=../../&rd=../&pr=busca&pag=$2&buscar_txt=$1 [NC,L]
+RewriteCond ${generales:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)/([^?/]+)$ web/general.asp?id_general=${generales:${lower:$1}}&pag=$2&r=../&rd=../ [NC,L] 
+#NOTICIAS
+RewriteCond ${noticias:${lower:$1}|NOT_FOUND} !NOT_FOUND
+RewriteRule ^([^?/]+)$ web/noticia.asp?id_noticia=${noticias:${lower:$1}}&r=&rd=../ [NC,L] 
+RewriteRule ^gestor-ko/$  gestor/index.asp?r=../gestor/&rd=&ms=ko&n=log [NC,L]
+RewriteRule ^gestor-pass/$  gestor/index.asp?r=../gestor/&rd=&ms=&n=log&p=pass [NC,L]
+RewriteRule ^recover-crm/([^?/]+)$  gestor/index.asp?r=../gestor/&rd=&ms=&n=log&p=pass&cod=$1 [NC,L]
+RewriteRule ^gestor-pass-ch/$  gestor/index.asp?r=../gestor/&rd=&ms=&n=log&p=pass-ch [NC,L]
+RewriteRule ^gestor-out/$  gestor/index.asp?r=../gestor/&rd=&n=log&salir=si [NC,L]
